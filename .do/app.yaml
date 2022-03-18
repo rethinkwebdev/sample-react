@@ -5,5 +5,5 @@ services:
   github:
     branch: main
     deploy_on_push: true
-    repo: digitalocean/sample-react
+    repo: rethinkwebdev/sample-react
   name: sample-react
