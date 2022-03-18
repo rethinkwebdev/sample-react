@@ -1,55 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-
-/**
- * Uses Tailwind CSS for styling
- * Tailwind file is imported in App.css
- */
+import ZoomSlider from "react-instagram-zoom-slider";
 
 export default function App() {
-  return (
-    <div className="app min-h-screen text-blue-200 flex items-center flex-col p-20">
-      <div className="mb-10 grid grid-cols-4 grid-rows-2 w-1/2 mx-auto">
-        <img className="opacity-25" src={logo} alt="React Logo" width="300" />
-        <img
-          className="col-span-2 row-span-3 animate-spin m-auto"
-          style={{ animationDuration: "30s" }}
-          src={logo}
-          alt="React Logo"
-          width="300"
-        />
-        <img className="opacity-25" src={logo} alt="React Logo" width="300" />
-        <img className="opacity-25" src={logo} alt="React Logo" width="300" />
-        <img className="opacity-25" src={logo} alt="React Logo" width="300" />
-      </div>
+  const slides = [
+    <img
+      src="https://lh3.googleusercontent.com/ZKekQLpv7E1dXmoWkTyn5jYYxUN1t9VVcRZ0TRQrQJzihmih2ca-74QNCo-CQgvZIc4zGQSnV4FmpXBes3ucRzd0H-X8ur3oLCA0QQ=w600"
+      alt="SAAC 1"
+    />,
+    <img
+      src="https://lh3.googleusercontent.com/ntcPXPtKo_43bhGxefY_fCspZ4s422cUqYmxiAP8iO_NVcKJLtU8k_pBeUFgN0A6-jgCFR1IhF0hS9C9J-Illkb9y8tIknpt0yAiHA=w600"
+      alt="SAC 2"
+    />,
+  ];
 
-      <h1 className="text-2xl lg:text-5xl mb-10 text-right">
-        Welcome to Your New React App{" "}
-        <span className="block text-lg text-blue-400">RethinkWebDev</span>
-      </h1>
-
-      <div className="grid grid-cols-2 grid-rows-2 gap-4">
-        <Button
-          text="DigitalOcean Docs"
-          url="https://www.digitalocean.com/docs/app-platform"
-        />
-        <Button
-          text="DigitalOcean Dashboard"
-          url="https://cloud.digitalocean.com/apps"
-        />
-      </div>
-    </div>
-  );
-}
-
-function Button({ className, text, url = "#" }) {
-  return (
-    <a
-      href={url}
-      className={`${className} py-3 px-6 bg-purple-400 hover:bg-purple-300 text-purple-800 hover:text-purple-900 block rounded text-center shadow flex items-center justify-center leading-snug text-xs transition ease-in duration-150`}
-    >
-      {text}
-    </a>
-  );
+  return <ZoomSlider slides={slides} />;
 }
